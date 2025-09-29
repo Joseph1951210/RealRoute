@@ -11,6 +11,10 @@ The website link is https://minghokwok.github.io/deepsieve
 
 ## 🌐 Overview
 
+![Overview](Fig/Overview.pdf)
+![Workflow](Fig/Workflow.pdf)
+
+
 **DeepSieve** is a Retrieval-Augmented Generation (RAG) framework designed to handle:
 - **Structurally heterogeneous knowledge** (e.g., SQL tables, JSON logs, Wikipedia)
 - **Compositional queries** requiring multi-step reasoning
