@@ -1,4 +1,5 @@
 {
-    "law_profile": "This corpus includes documents related to ",
-    "med_profile": "This corpus includes documents related to medical conditions, treatments, and medications."
+    "law_profile": "This corpus contains U.S. legal case texts and legal reasoning. It is suitable for questions about court decisions, legal doctrines, case holdings, statutory interpretation, contracts, torts, criminal law, and how judges ruled in specific situations.",
+    "med_profile": "This corpus contains clinical and biomedical questions and explanations. It is suitable for questions about diseases, symptoms, diagnostic tests, treatments, drugs and side effects, mechanisms of action, and medical decision-making for specific patients."
 }
+  
