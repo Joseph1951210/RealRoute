@@ -5,17 +5,35 @@ This module implements the NaiveRAG system for document retrieval and question a
 """
 
 import os
+import sys
 import json
 import requests
 import numpy as np
 from typing import List, Dict, Union, Optional
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
 import tiktoken
 import networkx as nx
 from collections import defaultdict
 import re
+
+# 设置环境变量以解决 Unicode 编码问题（必须在导入 sentence_transformers 之前）
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+os.environ['LANG'] = 'en_US.UTF-8'
+os.environ['LC_ALL'] = 'en_US.UTF-8'
+os.environ['LC_CTYPE'] = 'en_US.UTF-8'
+
+# 清理可能包含非 ASCII 字符的代理环境变量
+for key in ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']:
+    if key in os.environ:
+        value = os.environ[key]
+        try:
+            value.encode('latin-1')
+        except UnicodeEncodeError:
+            # 如果包含非 ASCII 字符，删除该环境变量
+            del os.environ[key]
+
+from sentence_transformers import SentenceTransformer
 
 
 

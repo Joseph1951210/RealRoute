@@ -23,6 +23,7 @@ Compatible datasets:
     - hotpot_qa
     - 2wikimultihopqa
     - musique
+    - law-med
 """
 
 

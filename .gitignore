@@ -1,3 +1,4 @@
 outputs/
 __pycache__/
 dataset/
+setup_deepsieve_env.sh
