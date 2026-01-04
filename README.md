@@ -6,6 +6,9 @@ The arxiv link is https://arxiv.org/abs/2507.22050
 
 The website link is https://minghokwok.github.io/deepsieve
 
+
+- \[**Jan 2026**\] This paper was accepted by **EACL 2026** Findings 🎉🎉🎉🎉🎉
+
 ## 📰 News
 2025-07-29 — Uploaded full corpus to Arkiv and released DeepSieve preprint on arXiv
 
