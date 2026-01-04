@@ -151,7 +151,8 @@ If you find this work helpful, please consider citing our paper:
   booktitle={Findings of the Association for Computational Linguistics: EACL 2026},
   year={2026}
 }
-
+```
+```
 @article{guo2025deepsieve,
   title={DeepSieve: Information Sieving via LLM-as-a-Knowledge-Router},
   author={Guo, Minghao and Zeng, Qingcheng and Zhao, Xujiang and Liu, Yanchi and Yu, Wenchao and Du, Mengnan and Chen, Haifeng and Cheng, Wei},
