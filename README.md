@@ -7,11 +7,11 @@ The arxiv link is https://arxiv.org/abs/2507.22050
 The website link is https://minghokwok.github.io/deepsieve
 
 
-- \[**Jan 2026**\] This paper was accepted by **EACL 2026** Findings 🎉🎉🎉🎉🎉
+
 
 ## 📰 News
-2025-07-29 — Uploaded full corpus to Arkiv and released DeepSieve preprint on arXiv
-
+-  2025-07-29 — Uploaded full corpus to Arkiv and released DeepSieve preprint on arXiv
+- \[**Jan 2026**\] This paper was accepted by **EACL 2026** Findings 🎉🎉🎉🎉🎉
 ## 🌐 Overview
 
 ![Overview](Fig/Overview.png)
@@ -145,10 +145,20 @@ Each run saves:
 ## 📚 Citation
 If you find this work helpful, please consider citing our paper:
 ```
+@inproceedings{guo2025deepsieve,
+  title={DeepSieve: Information Sieving via LLM-as-a-Knowledge-Router},
+  author={Guo, Minghao and Zeng, Qingcheng and Zhao, Xujiang and Liu, Yanchi and Yu, Wenchao and Du, Mengnan and Chen, Haifeng and Cheng, Wei},
+  booktitle={Findings of the Association for Computational Linguistics: EACL 2026},
+  year={2026}
+}
+
 @article{guo2025deepsieve,
   title={DeepSieve: Information Sieving via LLM-as-a-Knowledge-Router},
   author={Guo, Minghao and Zeng, Qingcheng and Zhao, Xujiang and Liu, Yanchi and Yu, Wenchao and Du, Mengnan and Chen, Haifeng and Cheng, Wei},
   journal={arXiv preprint arXiv:2507.22050},
   year={2025}
 }
+
+
+
 ```
