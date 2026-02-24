@@ -121,7 +121,7 @@ Parameter meanings (current implementation):
 Important note:
 - Current Adaptive Cap is `preferred_source + fixed quotas`, not a confidence-calibrated quota policy.
 
-## 5. Streamlit Web UI (ACL Demo View)
+## 5. Streamlit Web UI (Demo View)
 
 Entrypoint:
 
