@@ -27,10 +27,29 @@ Compatible datasets:
 
 
 import os
+import sys
+
+# 添加项目根目录到 Python 路径
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 import json
 import argparse
 import requests
 import numpy as np
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """Handle numpy types for JSON serialization."""
+    def default(self, obj):
+        if isinstance(obj, (np.integer,)):
+            return int(obj)
+        if isinstance(obj, (np.floating,)):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
 from typing import List, Dict, Union, Optional
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -39,20 +58,32 @@ import tiktoken
 import networkx as nx
 from collections import defaultdict
 import re
-from rag.initializer import initialize_rag_system
+from rag.initializer import initialize_rag_system, initialize_multi_source_rag
 from pipeline.reasoning_pipeline import plan_subqueries_with_llm, route_query_with_llm, get_fused_final_answer, substitute_variables
 from pipeline.subquery_executor import execute_subquery
-from utils.data_load import load_queries, load_corpus_and_profiles
+from utils.data_load import load_queries, load_corpus_and_profiles, load_multi_source_corpus, load_multi_source_queries
 from utils.llm_call import call_openai_chat
 from utils.metrics import count_tokens, evaluate_answer, calculate_overall_metrics
 
-def get_save_dir(decompose: bool, use_routing: bool, use_reflection: bool, dataset: str, rag_type: str):
+def get_save_dir(decompose: bool, use_routing: bool, use_reflection: bool, dataset: str, rag_type: str, multi_source: bool = False, hard_routing_multi: bool = False, keep_k: int = 5, per_source_cap: int = 0, model: str = "", selector: str = "score", preferred_cap: int = 0, other_cap: int = 0):
     save_dir = "outputs/"
     save_dir += rag_type
     save_dir += "_"
     save_dir += dataset
+    if model and model != "gpt-4o-mini":
+        save_dir += f"_{model.replace('/', '-')}"
     save_dir += "_"
-    if not use_routing:
+    if hard_routing_multi:
+        save_dir += "_hard_routing_multi"
+    elif multi_source:
+        save_dir += f"_multi_source_k{keep_k}"
+        if preferred_cap > 0 and other_cap > 0:
+            save_dir += f"_acap{preferred_cap}_{other_cap}"
+        elif per_source_cap > 0:
+            save_dir += f"_cap{per_source_cap}"
+        if selector and selector != "score":
+            save_dir += f"_{selector}"
+    elif not use_routing:
         save_dir += "_no_routing"
     if not decompose:
         save_dir += "_no_decompose"
@@ -61,6 +92,14 @@ def get_save_dir(decompose: bool, use_routing: bool, use_reflection: bool, datas
     return save_dir
 
 def save_overall_results(save_dir, overall_metrics, queries_and_truth, all_metrics):
+    if not overall_metrics:
+        print("⚠️  No valid results to summarize (all queries may have failed).")
+        # Save empty results for debugging
+        overall_json_path = os.path.join(save_dir, "overall_results.json")
+        with open(overall_json_path, "w") as f:
+            json.dump({"error": "No valid results", "queries": queries_and_truth, "all_query_metrics": all_metrics}, f, indent=2, cls=NumpyEncoder)
+        return
+
     overall_txt_path = os.path.join(save_dir, "overall_results.txt")
     with open(overall_txt_path, "w") as f:
         f.write("📊 Overall Performance Summary:\n")
@@ -78,7 +117,7 @@ def save_overall_results(save_dir, overall_metrics, queries_and_truth, all_metri
             "queries": queries_and_truth,
             "overall_metrics": overall_metrics,
             "all_query_metrics": all_metrics
-        }, f, indent=2)
+        }, f, indent=2, cls=NumpyEncoder)
 
     # Update console output
     print("\n📊 Overall Performance Summary:")
@@ -98,16 +137,15 @@ def save_overall_results(save_dir, overall_metrics, queries_and_truth, all_metri
 
 def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, final_answer, final_reason, fusion_token_count, fallback_answer, fusion_prompt, eval_results, eval_results_fallback, performance_metrics, results, fused_answer_texts):
     query_results_path = os.path.join(save_dir, f"query_{idx}_results.jsonl")
+    _d = lambda obj: json.dumps(obj, cls=NumpyEncoder)
     with open(query_results_path, "w") as f:
-        # 1st: Query metadata
-        f.write(json.dumps({
+        f.write(_d({
             "type": "query_info",
             "query": multi_hop_query,
             "ground_truth": ground_truth
         }) + "\n")
 
-        # 2nd: Final answer summary
-        f.write(json.dumps({
+        f.write(_d({
             "type": "final_answer",
             "final_answer": final_answer,
             "final_reason": final_reason,
@@ -116,8 +154,7 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
             "fusion_equals_fallback": fallback_answer.strip().lower() == final_answer.strip().lower()
         }) + "\n")
 
-        # 3rd: Evaluation metrics
-        f.write(json.dumps({
+        f.write(_d({
             "type": "evaluation_metrics",
             "fusion": {
                 "exact_match": eval_results["exact_match"],
@@ -129,8 +166,7 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
             }
         }) + "\n")
 
-        # 4th: Performance metrics
-        f.write(json.dumps({
+        f.write(_d({
             "type": "performance_metrics",
             "total_retrieval_time": performance_metrics["total_retrieval_time"],
             "avg_retrieval_time": performance_metrics["avg_retrieval_time"],
@@ -145,9 +181,8 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
             }
         }) + "\n")
 
-        # 5th: Subquery performance details
         for metrics in performance_metrics["subquery_metrics"]:
-            f.write(json.dumps({
+            f.write(_d({
                 "type": "subquery_metric",
                 "subquery_id": metrics["subquery_id"],
                 "retrieval_time": metrics["retrieval_time"],
@@ -156,9 +191,8 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
                 "max_similarity": metrics["max_similarity"]
             }) + "\n")
 
-        # 6th: Execution results (per subquery)
         for r in results:
-            f.write(json.dumps({
+            f.write(_d({
                 "type": "execution_result",
                 "subquery_id": r["subquery_id"],
                 "original_query": r["original_query"],
@@ -176,9 +210,8 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
                 ]
             }) + "\n")
 
-        # 7th: Answer chain
         for step in fused_answer_texts:
-            f.write(json.dumps({
+            f.write(_d({
                 "type": "fused_answer_step",
                 "text": step
             }) + "\n")        
@@ -188,7 +221,7 @@ def save_single_query_results(save_dir, idx, multi_hop_query, ground_truth, fina
         f_prompt.write(fusion_prompt)
     return performance_metrics
 
-def process_subqueries(performance_metrics, query_plan, variable_values, local_rag, global_rag, merged_rag, use_routing, use_reflection, max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir, idx, multi_hop_query, ground_truth, results, fused_answer_texts):
+def process_subqueries(performance_metrics, query_plan, variable_values, local_rag, global_rag, merged_rag, use_routing, use_reflection, max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir, idx, multi_hop_query, ground_truth, results, fused_answer_texts, multi_source=False, top_k_per_source=5, keep_k=5, selector="score", per_source_cap=0, rag_sources=None, source_profiles=None, hard_routing_multi=False, preferred_cap=0, other_cap=0):
     for subquery_info in query_plan["subqueries"]:
         subquery_result = execute_subquery(
             subquery_info,
@@ -203,7 +236,17 @@ def process_subqueries(performance_metrics, query_plan, variable_values, local_r
             global_profile,
             openai_api_key,
             openai_model,
-            openai_base_url
+            openai_base_url,
+            multi_source,
+            top_k_per_source,
+            keep_k,
+            selector,
+            per_source_cap=per_source_cap,
+            rag_sources=rag_sources,
+            source_profiles=source_profiles,
+            hard_routing_multi=hard_routing_multi,
+            preferred_cap=preferred_cap,
+            other_cap=other_cap
         )
         results.append(subquery_result)
         fused_answer_texts.append(f"{subquery_result['subquery_id']}: {subquery_result['actual_query']} → {subquery_result['answer']} (reason: {subquery_result['reason']})")
@@ -211,6 +254,9 @@ def process_subqueries(performance_metrics, query_plan, variable_values, local_r
         performance_metrics["total_docs_searched"] += subquery_result["docs_searched"]
         performance_metrics["avg_similarity_scores"].append(subquery_result["avg_similarity"])
         performance_metrics["max_similarity_scores"].append(subquery_result["max_similarity"])
+        # Accumulate token counts from each subquery
+        performance_metrics["total_prompt_tokens"] += subquery_result.get("prompt_token_count", 0)
+        performance_metrics["prompt_token_counts"].append(subquery_result.get("prompt_token_count", 0))
     # Compute summary metrics
     performance_metrics["avg_retrieval_time"] = performance_metrics["total_retrieval_time"] / len(query_plan["subqueries"])
     performance_metrics["avg_similarity"] = np.mean(performance_metrics["avg_similarity_scores"])
@@ -252,7 +298,7 @@ def process_subqueries(performance_metrics, query_plan, variable_values, local_r
 
     return performance_metrics
 
-def single_query_execution(decompose, all_metrics, queries_and_truth, local_rag, global_rag, merged_rag, use_routing, use_reflection, max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir):
+def single_query_execution(decompose, all_metrics, queries_and_truth, local_rag, global_rag, merged_rag, use_routing, use_reflection, max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir, multi_source=False, top_k_per_source=5, keep_k=5, selector="score", per_source_cap=0, rag_sources=None, source_profiles=None, hard_routing_multi=False, preferred_cap=0, other_cap=0):
     # Process each query
     for idx, query_info in enumerate(queries_and_truth, 1):
         multi_hop_query = query_info["query"]
@@ -293,7 +339,38 @@ def single_query_execution(decompose, all_metrics, queries_and_truth, local_rag,
         }
 
         # Process subqueries in order, handle dependencies
-        performance_metrics = process_subqueries(performance_metrics, query_plan, variable_values, local_rag, global_rag, merged_rag, use_routing, use_reflection, max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir, idx, multi_hop_query, ground_truth, results, fused_answer_texts)
+        performance_metrics = process_subqueries(
+            performance_metrics, 
+            query_plan, 
+            variable_values, 
+            local_rag, 
+            global_rag, 
+            merged_rag, 
+            use_routing, 
+            use_reflection, 
+            max_reflexion_times, 
+            local_profile, 
+            global_profile, 
+            openai_api_key, 
+            openai_model, 
+            openai_base_url, 
+            save_dir, 
+            idx, 
+            multi_hop_query, 
+            ground_truth, 
+            results, 
+            fused_answer_texts,
+            multi_source,
+            top_k_per_source,
+            keep_k,
+            selector,
+            per_source_cap=per_source_cap,
+            rag_sources=rag_sources,
+            source_profiles=source_profiles,
+            hard_routing_multi=hard_routing_multi,
+            preferred_cap=preferred_cap,
+            other_cap=other_cap
+        )
         all_metrics.append(performance_metrics)
     
     return all_metrics
@@ -316,6 +393,17 @@ def parse_args():
     parser.add_argument("--openai_base_url", type=str, default=os.environ.get("OPENAI_API_BASE"))
 
     parser.add_argument("--rag_type", type=str, choices=["naive", "graph"], default=os.environ.get("RAG_TYPE", "naive"))
+    
+    # Multi-source evidence-level retrieval arguments
+    parser.add_argument("--multi_source", action="store_true", help="Enable multi-source evidence-level retrieval (overrides hard routing)")
+    parser.add_argument("--top_k_per_source", type=int, default=5, help="Number of candidates to retrieve per source")
+    parser.add_argument("--keep_k", type=int, default=5, help="Number of final evidences to keep after selection")
+    parser.add_argument("--selector", type=str, choices=["score", "norm_score", "routing_weighted", "rrf", "llm"], default="score", help="Evidence selection strategy")
+    parser.add_argument("--per_source_cap", type=int, default=0, help="Max evidences per source (0 = no cap)")
+    parser.add_argument("--preferred_cap", type=int, default=0, help="Adaptive cap: max evidences from LLM-preferred source (0 = disabled)")
+    parser.add_argument("--other_cap", type=int, default=0, help="Adaptive cap: max evidences from non-preferred sources (0 = disabled)")
+    parser.add_argument("--hard_routing_multi", action="store_true", help="Enable N-source hard routing (DeepSieve-style, route to ONE of N sources)")
+    
     return parser.parse_args()
 
 
@@ -335,8 +423,7 @@ def main(args):
         rag_type: RAG type, can be "naive" or "graph"
     """
     # Load data
-    queries_and_truth = load_queries(args.dataset, args.sample_size)
-    save_dir = get_save_dir(args.decompose, args.use_routing, args.use_reflection, args.dataset, args.rag_type)
+    save_dir = get_save_dir(args.decompose, args.use_routing, args.use_reflection, args.dataset, args.rag_type, args.multi_source, args.hard_routing_multi, args.keep_k, args.per_source_cap, args.openai_model, args.selector, args.preferred_cap, args.other_cap)
     os.makedirs(save_dir, exist_ok=True)
 
     openai_model = args.openai_model
@@ -345,17 +432,118 @@ def main(args):
     if not openai_api_key:
         raise ValueError("❌ Please set your OPENAI_API_KEY environment variable.")
 
-    # Prepare knowledge base documents
-    local_docs, global_docs, local_profile, global_profile = load_corpus_and_profiles(args.dataset)
-    print(f"✅ Loaded {len(local_docs)} documents into local_docs.")
-    print(f"✅ Loaded {len(global_docs)} documents into global_docs.")
-    print(f"✅ Loaded local_profile and global_profile.")
+    # Detect if this is a multi-source dataset (has _profiles.json instead of _corpus_profiles.json)
+    is_multi_source_dataset = os.path.exists(f"data/rag/{args.dataset}_profiles.json")
 
-    # Initialize RAG system
-    local_rag, global_rag, merged_rag = initialize_rag_system(args.rag_type, args.use_routing, local_docs, global_docs)
+    # --- Multi-source cross-domain path ---
+    if (args.multi_source or args.hard_routing_multi) and is_multi_source_dataset:
+        mode_label = "hard-routing" if args.hard_routing_multi else "multi-source"
+        print(f"🌐 Cross-domain {mode_label} mode detected for dataset '{args.dataset}'")
 
-    all_metrics = []  # Store all query performance metrics    
-    all_metrics = single_query_execution(args.decompose, all_metrics, queries_and_truth, local_rag, global_rag, merged_rag, args.use_routing, args.use_reflection, args.max_reflexion_times, local_profile, global_profile, openai_api_key, openai_model, openai_base_url, save_dir)
+        # Load multi-source QA (with source labels)
+        queries_and_truth = load_multi_source_queries(args.dataset, args.sample_size)
+        print(f"✅ Loaded {len(queries_and_truth)} queries (with source labels)")
+
+        # Load multi-source corpus and profiles
+        sources_docs, source_profiles = load_multi_source_corpus(args.dataset)
+
+        # Initialize RAG for each source
+        rag_sources = initialize_multi_source_rag(args.rag_type, sources_docs)
+
+        if args.hard_routing_multi:
+            print(f"🔀 Hard routing mode: LLM will route each query to ONE of {len(rag_sources)} sources")
+        else:
+            print(f"🔍 Multi-source evidence-level retrieval enabled")
+        print(f"   Sources: {list(rag_sources.keys())}")
+        if not args.hard_routing_multi:
+            print(f"   selector={args.selector}, top_k_per_source={args.top_k_per_source}, keep_k={args.keep_k}")
+
+        # In cross-domain multi-source mode, we don't use local/global RAG or profiles
+        local_rag, global_rag, merged_rag = None, None, None
+        local_profile, global_profile = "", ""
+        use_routing_effective = False
+
+        all_metrics = []
+        all_metrics = single_query_execution(
+            args.decompose,
+            all_metrics,
+            queries_and_truth,
+            local_rag,
+            global_rag,
+            merged_rag,
+            use_routing_effective,
+            args.use_reflection,
+            args.max_reflexion_times,
+            local_profile,
+            global_profile,
+            openai_api_key,
+            openai_model,
+            openai_base_url,
+            save_dir,
+            args.multi_source,
+            args.top_k_per_source,
+            args.keep_k,
+            args.selector,
+            per_source_cap=args.per_source_cap,
+            rag_sources=rag_sources,
+            source_profiles=source_profiles,
+            hard_routing_multi=args.hard_routing_multi,
+            preferred_cap=args.preferred_cap,
+            other_cap=args.other_cap
+        )
+
+    # --- Original path (local/global split) ---
+    else:
+        queries_and_truth = load_queries(args.dataset, args.sample_size)
+
+        # Prepare knowledge base documents
+        local_docs, global_docs, local_profile, global_profile = load_corpus_and_profiles(args.dataset)
+        print(f"✅ Loaded {len(local_docs)} documents into local_docs.")
+        print(f"✅ Loaded {len(global_docs)} documents into global_docs.")
+        print(f"✅ Loaded local_profile and global_profile.")
+
+        # Handle multi_source mode interaction with use_routing
+        use_routing_effective = args.use_routing
+        if args.multi_source and args.use_routing:
+            print("⚠️  Multi-source mode enabled: hard routing will be bypassed, using evidence-level selection instead")
+            use_routing_effective = False
+
+        # Initialize RAG system
+        local_rag, global_rag, merged_rag = initialize_rag_system(
+            args.rag_type,
+            use_routing_effective or args.multi_source,
+            local_docs,
+            global_docs
+        )
+
+        if args.multi_source:
+            print(f"🔍 Multi-source evidence-level retrieval enabled (selector={args.selector}, top_k_per_source={args.top_k_per_source}, keep_k={args.keep_k})")
+
+        all_metrics = []
+        all_metrics = single_query_execution(
+            args.decompose,
+            all_metrics,
+            queries_and_truth,
+            local_rag,
+            global_rag,
+            merged_rag,
+            use_routing_effective,
+            args.use_reflection,
+            args.max_reflexion_times,
+            local_profile,
+            global_profile,
+            openai_api_key,
+            openai_model,
+            openai_base_url,
+            save_dir,
+            args.multi_source,
+            args.top_k_per_source,
+            args.keep_k,
+            args.selector,
+            per_source_cap=args.per_source_cap,
+            preferred_cap=args.preferred_cap,
+            other_cap=args.other_cap
+        )
     # Compute and save overall performance metrics
     overall_metrics = calculate_overall_metrics(all_metrics)
     

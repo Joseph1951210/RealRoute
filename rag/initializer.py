@@ -4,6 +4,7 @@ rag/initializer.py
 This module initializes the RAG system based on the specified RAG type and routing mode.
 """
 
+from typing import Dict, List
 from rag.naive_rag import NaiveRAG
 from rag.graph_rag import GraphRAG_Improved
 
@@ -33,3 +34,29 @@ def initialize_rag_system(rag_type: str, use_routing: bool, local_docs: list, gl
         
         print(f"🔍 Using no-routing mode: merged local and global knowledge bases, RAG type: {rag_type}")
         return None, None, merged_rag
+
+
+def initialize_multi_source_rag(rag_type: str, sources: Dict[str, List[str]]) -> Dict:
+    """
+    Initialize a RAG instance for each source in a multi-source setup.
+
+    Args:
+        rag_type: "naive" or "graph"
+        sources: {"wiki": [doc1, doc2, ...], "sciq": [...], ...}
+
+    Returns:
+        {"wiki": NaiveRAG(...), "sciq": NaiveRAG(...), ...}
+    """
+    rag_instances = {}
+    for source_name, docs in sources.items():
+        print(f"  🔧 Initializing RAG for source '{source_name}' ({len(docs)} docs)...")
+        if rag_type == "naive":
+            rag_instances[source_name] = NaiveRAG(docs)
+        elif rag_type == "graph":
+            rag_instances[source_name] = GraphRAG_Improved(docs)
+        else:
+            raise ValueError(f"Unsupported RAG type: {rag_type}")
+        print(f"  ✅ Source '{source_name}' ready")
+
+    print(f"🔍 Multi-source mode: initialized {len(rag_instances)} knowledge bases, RAG type: {rag_type}")
+    return rag_instances

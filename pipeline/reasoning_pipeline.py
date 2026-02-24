@@ -150,6 +150,72 @@ Do not add any explanation or extra words."""
         return "local"
 
 
+def route_query_multi_source(query: str, source_profiles: dict,
+                              api_key: str, model: str, base_url: str,
+                              fail_history: str = "") -> str:
+    """Route query to one of N knowledge sources (hard routing).
+
+    This extends DeepSieve's original 2-way routing to N-way routing
+    for cross-domain multi-source experiments.
+
+    Args:
+        query: Query text
+        source_profiles: Dict of {source_name: profile_description}
+        api_key: API key
+        model: Model name
+        base_url: API base URL
+        fail_history: Failure history for reflection
+
+    Returns:
+        str: Selected source name
+    """
+    source_names = list(source_profiles.keys())
+
+    # Build numbered profile list
+    profiles_text = ""
+    for i, (name, profile) in enumerate(source_profiles.items(), 1):
+        profiles_text += f"SOURCE {i} — \"{name}\":\n{profile}\n\n"
+
+    choices_str = ", ".join(f'"{n}"' for n in source_names)
+
+    prompt = f"""You are a routing assistant. Your task is to decide which knowledge source is most relevant for answering the given query.
+
+Available knowledge sources:
+
+{profiles_text}
+QUERY:
+{query}
+
+{fail_history}
+
+Please output ONLY the source name (one of: {choices_str}) that is most relevant to answer this query.
+Do not add any explanation or extra words."""
+
+    try:
+        response = call_openai_chat(prompt, api_key, model, base_url)
+        if not response:
+            print(f"⚠️ Multi-source routing response is empty, defaulting to '{source_names[0]}'")
+            return source_names[0]
+
+        route = response.strip().strip('"').strip("'").lower()
+
+        # Try exact match
+        for name in source_names:
+            if route == name.lower():
+                return name
+
+        # Try partial match (e.g. LLM outputs "wiki" for "wiki")
+        for name in source_names:
+            if name.lower() in route or route in name.lower():
+                return name
+
+        print(f"⚠️ Unexpected routing output: '{route}', defaulting to '{source_names[0]}'")
+        return source_names[0]
+    except Exception as e:
+        print(f"⚠️ Multi-source routing error: {str(e)}, defaulting to '{source_names[0]}'")
+        return source_names[0]
+
+
 def get_fused_final_answer(original_question: str, subquery_results: List[Dict], api_key: str, model: str, base_url: str) -> tuple:
     prompt = f"""You are a multi-hop reasoning assistant. Your task is to generate the final answer to a multi-hop question based on the following reasoning steps.
 

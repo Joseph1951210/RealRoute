@@ -2,3 +2,25 @@ outputs/
 __pycache__/
 dataset/
 setup_deepsieve_env.sh
+
+# OS / Python cache
+.DS_Store
+*.pyc
+**/__pycache__/
+
+# Local wrappers / legacy helpers (not for repo)
+run_with_encoding_fix.sh
+run_full_experiment.sh
+pipeline/query_executor.py
+runner/main_rag_only_law-med.py
+
+# Legacy / one-off experiment scripts (kept locally only)
+scripts/run_all_experiments.sh
+scripts/run_cross_domain_experiment.sh
+scripts/run_4source_experiment.sh
+scripts/run_gpt4o_new_selectors.sh
+
+# Local docs/drafts (keep README for repository docs)
+*.md
+!README.md
+!**/README.md
