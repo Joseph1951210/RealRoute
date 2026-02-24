@@ -279,7 +279,6 @@ def _coerce_run_blocks(result_obj: Any) -> Tuple[Optional[Dict[str, Any]], Optio
 
 def main() -> None:
     st.title("Multi-Source RAG Demo")
-    st.caption("Thin UI wrapper over the existing DeepSieve runner/pipeline. Displays trace JSONL, evidence selection outputs, and Adaptive Cap parameters.")
 
     st.markdown("## Configuration")
     with st.expander("Open / Edit Configuration", expanded=True):
