@@ -10,7 +10,7 @@ This repository provides an installable demo package for a DeepSieve-derived mul
 ## Installable Package Link
 
 - Source repository: `https://github.com/Joseph1951210/RealRoute`
-- Installable package (ACL demo artifact): `https://github.com/Joseph1951210/RealRoute/archive/refs/tags/v1.0-acl-demo.zip`
+- Installable package (ACL demo artifact): `https://github.com/Joseph1951210/RealRoute/archive/refs/tags/v1.0.1-acl-demo.zip`
 
 ## Environment Requirements
 
