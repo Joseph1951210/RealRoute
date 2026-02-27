@@ -10,7 +10,7 @@ This repository provides an installable demo package for a DeepSieve-derived mul
 ## Installable Package Link
 
 - Source repository: `https://github.com/Joseph1951210/RealRoute`
-- Installable package (ACL demo artifact): `[[TODO: add GitHub Release asset URL]]`
+- Installable package (ACL demo artifact): `https://github.com/Joseph1951210/RealRoute/archive/refs/tags/v1.0-acl-demo.zip`
 
 ## Environment Requirements
 
@@ -27,6 +27,18 @@ python3 -m streamlit run demo/app.py
 ```
 
 Open the local Streamlit URL shown in the terminal (typically `http://localhost:8501`).
+
+## Dataset Availability in Release `v1.0-acl-demo`
+
+The `v1.0-acl-demo` package includes tracked datasets required for the original 2-source preset (e.g., `hotpot_qa` local/global files).
+
+For 3-source / 4-source presets (`multi_source`, `mixed_4source`), make sure the corresponding files exist under `data/rag/` before running those presets:
+
+- `{dataset}.json`
+- `{dataset}_profiles.json`
+- `{dataset}_corpus_*.json`
+
+If these files are missing, those presets will fail at data-loading time.
 
 ## What the Demo Shows
 

@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "Controlling muscles and maintaining balance are just two of the roles of what system?",
+    "answer": "nervous system",
+    "source": "sciq"
+  },
+  {
+    "question": "Does TIMELESS-TIPIN participate in replisome disassembly?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which class of disorders are caused by AMPA receptor GluA2 subunit defects?",
+    "answer": "Neurodevelopmental disorders",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the effect of CRD-BP on the stability of c-myc mRNA?",
+    "answer": "To protect c-myc CRD from endonucleolytic attack.",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is METTL1 overexpression associated with better patient survival?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "What kind of organisms are yeasts?",
+    "answer": "single-celled",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the active ingredient of Eligard?",
+    "answer": "Leuprorelin acetate",
+    "source": "bioasq"
+  },
+  {
+    "question": "What record provides evidence that new species develop to fill the habitats where old species lived following a mass extinction?",
+    "answer": "fossil record",
+    "source": "sciq"
+  },
+  {
+    "question": "Does temsirolimus improve survival of glioblastoma patients?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "An increase in what, across the periodic table, explains why elements go from metals to metalloids and then to nonmetals?",
+    "answer": "electrons",
+    "source": "sciq"
+  },
+  {
+    "question": "What kind of radiation is greatest at the equator and lessens toward the poles?",
+    "answer": "solar radiation",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the  only marsupial in north america?",
+    "answer": "oppossum",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the double-membrane structure that constitutes the outermost portion of the nucleus?",
+    "answer": "nuclear envelope",
+    "source": "sciq"
+  },
+  {
+    "question": "What term describes diseases caused by abnormal cells in the body dividing uncontrollably?",
+    "answer": "cancer",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the main type of organism that gets its energy directly from the sun?",
+    "answer": "plants",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the methyl donor of DNA (cytosine-5)-methyltransferases?",
+    "answer": "S-adenosyl-L-methionine",
+    "source": "bioasq"
+  },
+  {
+    "question": "When are peptide bonds between amino acids formed?",
+    "answer": "process of translation",
+    "source": "sciq"
+  },
+  {
+    "question": "Is pembrolizumab effective against Ewing's sarcoma?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Who was the brother of the wife of the Democratic Party nomination for Vice President in 1972?",
+    "answer": "President John F. Kennedy",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who was the ruler ousted by the 30th Prime Minister of Cambodia after Khmer Rouge's victory over the Lon Nol government?",
+    "answer": "Prince of Cambodia Norodom Sihanouk",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is sumoylation implicated in myogenesis?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is Mary Pierce or Gustavo Kuerten the older tennis player?",
+    "answer": "Mary Pierce",
+    "source": "hotpot"
+  },
+  {
+    "question": "Do tumour-associated macrophages have a prognostic role in gliomas?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Because arthropod appendages are jointed, they can do what?",
+    "answer": "bend",
+    "source": "sciq"
+  },
+  {
+    "question": "How many records did the boy band who released \"Said and Done\" sell worldwide as of 2013?",
+    "answer": "25 million",
+    "source": "hotpot"
+  },
+  {
+    "question": "In what country can some of the largest natural crystals be found?",
+    "answer": "mexico",
+    "source": "sciq"
+  },
+  {
+    "question": "Blood flows from the right atrium to the right ventricle, where it is pumped into the what?",
+    "answer": "pulmonary circuit",
+    "source": "sciq"
+  },
+  {
+    "question": "Name an lncRNA associated with dilated cardiomyopathy.",
+    "answer": "lncRNA H19",
+    "source": "bioasq"
+  },
+  {
+    "question": "What can be used to accelerate the rate at which chemical reactions occur?",
+    "answer": "enzymes",
+    "source": "sciq"
+  },
+  {
+    "question": "Who is the chairman of the company that operates Suncoast Hotel and Casino?",
+    "answer": "Bill Boyd",
+    "source": "hotpot"
+  },
+  {
+    "question": "No-till farming is one effort to combat what, caused by typical farming practices?",
+    "answer": "soil erosion",
+    "source": "sciq"
+  },
+  {
+    "question": "Hate Them is the ninth album by a band likened to who?",
+    "answer": "Motörhead",
+    "source": "hotpot"
+  },
+  {
+    "question": "Where is the body would the Peyer's patches be found",
+    "answer": "gut",
+    "source": "bioasq"
+  },
+  {
+    "question": "What are the gas giants mostly made of .",
+    "answer": "hydrogen and helium",
+    "source": "sciq"
+  },
+  {
+    "question": "Which games, Strange Synergy or Qwirkle,  is a card game published by Steve Jackson Games?",
+    "answer": "Strange Synergy",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is the cause of Facioscapulohumeral Muscular Dystrophy type 2 (FSHD2)?",
+    "answer": "autosomal dominant disease",
+    "source": "bioasq"
+  },
+  {
+    "question": "What are living things that produce food for themselves and other organisms called?",
+    "answer": "producers",
+    "source": "sciq"
+  },
+  {
+    "question": "Who wrote the book that inspired the name of the CD/DVD \"Here at the End of All Things\"?",
+    "answer": "J. R. R. Tolkien",
+    "source": "hotpot"
+  },
+  {
+    "question": "Like sharks, nearly the entire human skeleton during a specific pre-birth developmental stage is made of what connective tissue?",
+    "answer": "cartilage",
+    "source": "sciq"
+  },
+  {
+    "question": "Which loss-of-function ABCC8 mutation is associated with Pulmonary Arterial Hypertension (PAH)?",
+    "answer": "c.G2873A",
+    "source": "bioasq"
+  },
+  {
+    "question": "The ileum is the last part of what digestive system organ?",
+    "answer": "small intestine",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the genus of the viral disease that has symptoms such as fever, chills, loss of appetite, nausea, muscle pains, and headaches, and has a chance of causing liver damage?",
+    "answer": "Flavivirus",
+    "source": "hotpot"
+  },
+  {
+    "question": "Alpha-spectrin and beta-spectrin subunits form parallel or antiparallel heterodimers?",
+    "answer": "antiparallel",
+    "source": "bioasq"
+  },
+  {
+    "question": "Who wrote The Devils, and was an eninent English theater, opera and film director?",
+    "answer": "Peter Hall",
+    "source": "hotpot"
+  },
+  {
+    "question": "The first few species to colonize a disturbed area are called what?",
+    "answer": "pioneer species",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the electrode at which reduction occurs called?",
+    "answer": "cathode",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the name for anorexia in gymnasts?",
+    "answer": "Anorexia Athletica",
+    "source": "bioasq"
+  },
+  {
+    "question": "What nationality was the lover of Lord Alfred Douglas ? ",
+    "answer": "Irish",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is the most likely age of diagnosis of Crohn's disease (CD)?",
+    "answer": "Crohn's disease has a bimodal age distribution of disease onset diagnosis. The peaks (20 and 50 years) may represent different phenotypes or different genetic and/or environmental influences between younger- and older-onset individuals.",
+    "source": "bioasq"
+  },
+  {
+    "question": "The author of Sexual Politics attended which British University?",
+    "answer": "Oxford",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which disease is included as an additional feature in the Goldberg-Shprintzen syndrome?",
+    "answer": "Craniosynostosis",
+    "source": "bioasq"
+  },
+  {
+    "question": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+    "answer": "Sam Phillips",
+    "source": "hotpot"
+  },
+  {
+    "question": "What type of fatty acids have bent chains?",
+    "answer": "unsaturated fatty acids",
+    "source": "sciq"
+  },
+  {
+    "question": "Who lived longer, Tony Richardson or Giorgio Ferroni?",
+    "answer": "Giorgio Ferroni",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is the name of the temporary organ that begins to form from the trophoblast layer of cells shortly after implantation?",
+    "answer": "placenta",
+    "source": "sciq"
+  },
+  {
+    "question": "What is water vapor density known as?",
+    "answer": "humidity",
+    "source": "sciq"
+  },
+  {
+    "question": "Apical dominance, seed germination, gravitropism, and resistance to freezing are all positively influenced by what type of chemicals in plants?",
+    "answer": "hormones",
+    "source": "sciq"
+  },
+  {
+    "question": "Is resistance training usually associated with increasing muscle hypertrophy?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is defined as the rate of energy transferred?",
+    "answer": "power",
+    "source": "sciq"
+  },
+  {
+    "question": "Little Brown Stein is a rivalry trophy that imitates a mug made out of what item?",
+    "answer": "stoneware",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is Cinpanemab effective for Parkinson’s Disease?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Isotocin is an homolog of what hormone?",
+    "answer": "oxytocin",
+    "source": "bioasq"
+  },
+  {
+    "question": "Surface tension comes from the fact that particles at the surface of a liquid do not experience interactions from all directions which leads to what on the surface?",
+    "answer": "imbalance of forces",
+    "source": "sciq"
+  },
+  {
+    "question": "Are there mammalian promoters with distal enhancer functions?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which is the most common monogenic cause of common variable immunodeficiency (CVID) in Europeans?",
+    "answer": "Heterozygous loss-of-function nuclear factor κB subunit 1 (NFKB1) variants",
+    "source": "bioasq"
+  },
+  {
+    "question": "What kind of material forms the wrapping for the chocolate candies that Hershey Kissables were shaped like?",
+    "answer": "aluminum foil",
+    "source": "hotpot"
+  },
+  {
+    "question": "Does molindone affect body weight?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Deterioration of limestone occurs more rapidly as the concentration of what increases?",
+    "answer": "air pollutants",
+    "source": "sciq"
+  },
+  {
+    "question": "What are the two main types of diabetes?",
+    "answer": "type 1, type 2",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the unit used to measure voltage?",
+    "answer": "volts",
+    "source": "sciq"
+  },
+  {
+    "question": "Although Michael Fincke's record was broken by Scott Kelly, commander of the International Space Station (ISS) on Expeditions 26, 45, and 46, what was his record for the most time in space?",
+    "answer": "381.6 days",
+    "source": "hotpot"
+  },
+  {
+    "question": "Could Catecholaminergic Polymorphic Ventricular Tachycardia (CPVT)\ncause sudden cardiac death?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Does deflazacort have more side effects than prednisone?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Prince Michael of Prussia was a member of the house that arose in what town in the 11th century?",
+    "answer": "Hechingen in Swabia",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are Anja Salomonowitz and Rod Lurie both directors?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is Crohn's disease (CD) linked to the consumption of refrigerated food?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What type of ions play critical roles in light-dependent reactions?",
+    "answer": "hydrogen",
+    "source": "sciq"
+  },
+  {
+    "question": "What is a controlled scientific study of specific variables called?",
+    "answer": "experiment",
+    "source": "sciq"
+  },
+  {
+    "question": "Who resides in the palace that was the inspiration for the Kensington System's name?",
+    "answer": "British Royal Family",
+    "source": "hotpot"
+  },
+  {
+    "question": "In the lungs, bicarbonate is transported back into the red blood cells in exchange for what?",
+    "answer": "chloride",
+    "source": "sciq"
+  },
+  {
+    "question": "Electrons are located at fixed distances from the nucleus, what are they called?",
+    "answer": "energy levels",
+    "source": "sciq"
+  },
+  {
+    "question": "Who was born first, Sathish Kalathil or Jacques Feyder?",
+    "answer": "Jacques Feyder",
+    "source": "hotpot"
+  },
+  {
+    "question": "Can IFNg induce the expression of IDO?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is there an association between Histone H3.3 mutations and glioma?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is corpus callosum involved in the Mowat–Wilson syndrome?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What player was the first overall pick in the 2004 NFL draft and had the Manning Field named after him?",
+    "answer": "Eli Manning",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are both American Foxhound and Löwchen types of Foxhounds?",
+    "answer": "no",
+    "source": "hotpot"
+  },
+  {
+    "question": "What film, based on the book “Boston Strong”, featured the actress Alex McKenna?",
+    "answer": "Patriots Day",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which is the phenotype of the disease fibrodysplasia ossificans progressiva?",
+    "answer": "3.\tFibrodysplasia ossificans progressiva (FOP), a congenital heterotopic ossification (HO) syndrome caused by gain-of-function mutations of bone morphogenetic protein (BMP) type I receptor ACVR1, manifests with progressive ossification of skeletal muscles, tendons, ligaments, and joints.",
+    "source": "bioasq"
+  },
+  {
+    "question": "What where both Hawker Hurricane and No. 1455 Flight apart of?",
+    "answer": "Royal Air Force",
+    "source": "hotpot"
+  },
+  {
+    "question": "What family do mDia proteins belong in?",
+    "answer": "mDia proteins are members of the formin family",
+    "source": "bioasq"
+  },
+  {
+    "question": "Does a linker histone exist in the yeast genome?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which services did Rock Nominees Ltd and  ISS A/S (Integrated Service Solutions) have in common?",
+    "answer": "cleaning, catering and security",
+    "source": "hotpot"
+  },
+  {
+    "question": "Kevin House Jr. played professionally for the team that is in what NFL conference?",
+    "answer": "National Football Conference (NFC) West",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which R/Bioconductor package has been developed for the analysis of psychiatric disease genes?",
+    "answer": "Psygenet2r",
+    "source": "bioasq"
+  },
+  {
+    "question": "Me and You and Everyone We Know was directed by an artist who also directed what 2011 film?",
+    "answer": "The Future",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who founded the Canadian manufacturer of winter clothing which is a major sponsor of Polar Bears International?",
+    "answer": "Sam Tick",
+    "source": "hotpot"
+  },
+  {
+    "question": "What group of gases are unusually unreactive?",
+    "answer": "noble gases",
+    "source": "sciq"
+  },
+  {
+    "question": "Is Tisagenlecleucel effective for B-Cell Lymphoma?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Who won the 2007 Copa America Final, with help from Julio Baptista?",
+    "answer": "Brazil",
+    "source": "hotpot"
+  },
+  {
+    "question": "which star of Hwarang: The Poet Warrior Youth was born on November 16, 1991 ?",
+    "answer": "Park Hyung-Sik",
+    "source": "hotpot"
+  },
+  {
+    "question": "Nucleic acids contain the information needed for cells to make what?",
+    "answer": "proteins",
+    "source": "sciq"
+  },
+  {
+    "question": "Which opera has more acts, Don Quichotte or Tosca?",
+    "answer": "Don Quichotte",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are The Datsuns and The Black Crowes both rock bands?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which historical drama filmed in the Winter Palace of the Russian State Hermitage Museum stars Sergey Dreyden?",
+    "answer": "Russian Ark",
+    "source": "hotpot"
+  },
+  {
+    "question": "Ingestive protists extend their cell wall and cell membrane around the food item, forming a what?",
+    "answer": "food vacuole",
+    "source": "sciq"
+  },
+  {
+    "question": "The Soul of a Butterfly is an autobiography of a professional boxer that was born in what year?",
+    "answer": "1942",
+    "source": "hotpot"
+  },
+  {
+    "question": "What antibiotic is currently used as the standard of care for Clostridium Difficile infection as of 2018",
+    "answer": "Fidaxomicin",
+    "source": "bioasq"
+  },
+  {
+    "question": "From where is gamabufotalin (GBT) isolated?",
+    "answer": "toad venom",
+    "source": "bioasq"
+  },
+  {
+    "question": "Trichomoniasis is cause by what type of pathogen?",
+    "answer": "protozoa",
+    "source": "sciq"
+  },
+  {
+    "question": "Is synapsin a phosphoprotein?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is marijuana use associated with increased risk for stroke?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Les Ottolenghi was previously the Chief Information Officer at what casino in Paradise, Nevada?",
+    "answer": "Las Vegas Sands",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who produced the 1998 British comedy starring the director of the feature film \"Eddie the Eagle\"?",
+    "answer": "Matthew Vaughn",
+    "source": "hotpot"
+  },
+  {
+    "question": "The enzyme pepsin plays an important role in the digestion of proteins by breaking down intact protein to what short-chain amino acids?",
+    "answer": "peptides",
+    "source": "sciq"
+  },
+  {
+    "question": "What system of the body is responsible for ultimately ridding it of waste and excess water?",
+    "answer": "excretory system",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the mode of delivery of the drug XIPERE?",
+    "answer": "microneedle-based delivery in the suprachoroidal space",
+    "source": "bioasq"
+  },
+  {
+    "question": "What occurs whenever an unbalanced force acts on an object?",
+    "answer": "acceleration",
+    "source": "sciq"
+  },
+  {
+    "question": "A statement that describes what always happens under certain conditions in nature is also known as what?",
+    "answer": "scientific law",
+    "source": "sciq"
+  },
+  {
+    "question": "Mexican Indignados Movement is a response to a war also known as?",
+    "answer": "Mexican War on Drugs",
+    "source": "hotpot"
+  },
+  {
+    "question": "Sulfate is used as a cleaning agent because it is acidic and soluble in what substance?",
+    "answer": "water",
+    "source": "sciq"
+  },
+  {
+    "question": "Gerald Grosvenor, 6th Duke of Westminster was succeeded by the British aristocrat who is estimated to be worth how much?",
+    "answer": "US$13 billion",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is golimumab effective for ulcerative colitis?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Hyenas and cockroaches are examples of what decomposers that consume the soft tissues of dead animals?",
+    "answer": "scavengers",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the effect of rHDL-apoE3 on endothelial cell migration?",
+    "answer": "Promotion",
+    "source": "bioasq"
+  },
+  {
+    "question": "What are chemical reactions represented by?",
+    "answer": "chemical equations",
+    "source": "sciq"
+  },
+  {
+    "question": "Which equation improves upon the ideal gas law by adding two terms: one to account for the volume of the gas molecules and another for the attractive forces between them?",
+    "answer": "van der waals",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the relationship between thyroid hormone and inflammatory markers in heart failure patients?",
+    "answer": "There is an inverse correlation between inflammatory markers and FT3 circulating levels",
+    "source": "bioasq"
+  },
+  {
+    "question": "Are nucleosomes positioned at DNA replication origins?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "The pressure inside a container is dependent on the amount of what inside the container?",
+    "answer": "gas",
+    "source": "sciq"
+  },
+  {
+    "question": "What do ionic bonds form between?",
+    "answer": "metals and nonmetals",
+    "source": "sciq"
+  },
+  {
+    "question": "How does this series represent a function, which is also used in the Homotopy analysis method?",
+    "answer": "infinite sum of terms",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is the Philadelphia chromosome a fusion between parts of chromosomes 1 and 9?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Are Vintage Life and InStyle both US-based magazines?",
+    "answer": "no",
+    "source": "hotpot"
+  },
+  {
+    "question": "Thrombocytes are more commonly known by what name?",
+    "answer": "platelets",
+    "source": "sciq"
+  },
+  {
+    "question": "The actress and singer Heather Morris is best known for her role in which series, becoming a regular character in the second season?",
+    "answer": "Glee",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are there interactions between short and long noncoding RNAs?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which key gene is involved in syndromic obesity phenotype of patients with 1p21.3 microdeletions?",
+    "answer": "MIR137",
+    "source": "bioasq"
+  },
+  {
+    "question": "John Valliant’s work has appeared in which outdoor-focused magazine whose first issue was published in September 1977?",
+    "answer": "Outside",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which pathway is activated by ficolin-3?",
+    "answer": "lectin complement pathway",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the unit used to measure air pressure?",
+    "answer": "millibar",
+    "source": "sciq"
+  },
+  {
+    "question": "What is the protein in red blood cells that transports oxygen in the bloodstream?",
+    "answer": "hemoglobin",
+    "source": "sciq"
+  },
+  {
+    "question": "Which \"The Chronicles of Narnia\" character is prominently featured in \"The Lion, the Witch and the Wardrobe\" and is a close friend with Lucy Pevensie whom she meets in the Lantern Waste.",
+    "answer": "Mr. Tumnus",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is the stored food in a seed called?",
+    "answer": "endosperm",
+    "source": "sciq"
+  },
+  {
+    "question": "Which 1994 British romantic comedy featured the song \"Love Is All Around\"?",
+    "answer": "Four Weddings and a Funeral",
+    "source": "hotpot"
+  },
+  {
+    "question": "The producer of \"Live By NIght\" began his film career playing what role in \"Critters 3\"?",
+    "answer": "Josh",
+    "source": "hotpot"
+  },
+  {
+    "question": "Living things get energy from food in a process called respiration, which releases what gas back into the atmosphere?",
+    "answer": "carbon dioxide",
+    "source": "sciq"
+  },
+  {
+    "question": "Did Qionghai or Suining  have a population of 658,798 in 2002? ",
+    "answer": "In 2002, Suining had a population of 658,798.",
+    "source": "hotpot"
+  },
+  {
+    "question": "In which breast cancer patients can palbociclib be used?",
+    "answer": "hormone receptor-positive, human epidermal growth factor receptor 2-negative",
+    "source": "bioasq"
+  },
+  {
+    "question": "Are Bitter Jester and The Future of Food both documentaries about food?",
+    "answer": "no",
+    "source": "hotpot"
+  },
+  {
+    "question": "How many amino acids does davunetide consist of?",
+    "answer": "eight",
+    "source": "bioasq"
+  },
+  {
+    "question": "Unlike eukaryotic cells, dna and rna synthesis in prokaryotic cells occurs together with synthesis of what?",
+    "answer": "protein",
+    "source": "sciq"
+  },
+  {
+    "question": "What type of tissue transports water, nutrients, and food in plants?",
+    "answer": "vascular tissue",
+    "source": "sciq"
+  },
+  {
+    "question": "What did  the man who  led Sweden to military supremacy during the Thirty Years' War found in 1623?",
+    "answer": "court in Åbo",
+    "source": "hotpot"
+  },
+  {
+    "question": "Neutrons and protons reside in which part of the atom?",
+    "answer": "nucleus",
+    "source": "sciq"
+  },
+  {
+    "question": "What are subatomic particles of the nucleus called?",
+    "answer": "nucleons",
+    "source": "sciq"
+  },
+  {
+    "question": " Legends of the Fall was based on a novella by what poetry and fiction writer?",
+    "answer": "James Harrison",
+    "source": "hotpot"
+  },
+  {
+    "question": "Where does Śivarāma Swami conduct courses on Vaishnava Theology?",
+    "answer": "in the village of Aldenham",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is the SDHAF2 gene encoding a protein necessary for flavination of SDHA?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is Hirschsprung disease one of the characteristics of the Mowat-Wilson syndrome?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Under the right conditions, what energy source can be used to eject electrons from a solid material?",
+    "answer": "light",
+    "source": "sciq"
+  },
+  {
+    "question": "Which is the main calcium binding protein of the sarcoplasmic reticulum?",
+    "answer": "Calsequestrin",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the outcome of TAF10 interacting with the GATA1 transcription factor?",
+    "answer": "Control of Mouse Erythropoiesis",
+    "source": "bioasq"
+  },
+  {
+    "question": "What code is the same in all living things and shows that all organisms are related by descent from a common ancestor?",
+    "answer": "genetic",
+    "source": "sciq"
+  },
+  {
+    "question": "Has the companion diagnostic HercepTest received FDA approval?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the function of the spliceosome complex?",
+    "answer": "The excision of introns from nascent eukaryotic transcripts is catalyzed by the spliceosome.",
+    "source": "bioasq"
+  },
+  {
+    "question": "Where do most of the digestion reactions occur?",
+    "answer": "small intestine",
+    "source": "sciq"
+  },
+  {
+    "question": "As the atoms approach one another, their electron clouds gradually begin to do what?",
+    "answer": "overlap",
+    "source": "sciq"
+  },
+  {
+    "question": "What band formed in 1995 and came out with an album called \"Welcome Interstate Managers'?",
+    "answer": "Fountains of Wayne",
+    "source": "hotpot"
+  },
+  {
+    "question": "What Japanese fashion label was founded by the creator of Dover Street Market?",
+    "answer": "Comme des Garçons",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are Broughtonia and Laeliocattleya both orchids?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "What condition is usually represented by the acronym SUDEP?",
+    "answer": "Sudden Unexpected Death in Epilepsy (SUDEP)",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which gene-defect causes the Vel-blood type?",
+    "answer": "a 17 nucleotide deletion",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which football team does Lewis Young's older brother, Ashley Young, play for?",
+    "answer": "Premier League club Manchester United and the England national team",
+    "source": "hotpot"
+  },
+  {
+    "question": "My Secret Hotel is a television series starring a South Korean DJ who rose to fame as the lead actress in what?",
+    "answer": "Queen In-hyun's Man",
+    "source": "hotpot"
+  },
+  {
+    "question": "The Twelfth United States Army Group commander was the first chairman of what?",
+    "answer": "Joint Chiefs of Staff",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is Telangiectasia?",
+    "answer": "prominent small vessels",
+    "source": "bioasq"
+  },
+  {
+    "question": "Some consumers such as the mushroom get their energy from what?",
+    "answer": "dead organic matter",
+    "source": "sciq"
+  },
+  {
+    "question": "Are astrocytes part of the blood brain barrier?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which particular intersex phenotype is related to steroid reductase?",
+    "answer": "male pseudohermaphroditism",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is Ameloblastoma (AB) a common benign tumor occurring in the brain?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Located above the stratosphere, what layer is the place where meteors burn up?",
+    "answer": "mesosphere",
+    "source": "sciq"
+  },
+  {
+    "question": "Jim Betts ran against the first American to orbit what?",
+    "answer": "Earth",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is the name of the city located near the historical region known as Margianḗ in Greek?",
+    "answer": "Mary",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which gene is most commonly associated with severe congenital and cyclic neutropenia?",
+    "answer": "The neutrophil elastase gene (ELANE)",
+    "source": "bioasq"
+  },
+  {
+    "question": "The radial artery and which artery parallel their namesake bones, giving off smaller branches until they reach the wrist, or carpal region?",
+    "answer": "ulnar",
+    "source": "sciq"
+  },
+  {
+    "question": "When was the Indian film actor, producer and playback singer born who debut with the 2000 War film, \"Refugee\" and had lead role in Main Prem Ki Diwani Hoon?",
+    "answer": "5 February 1976",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who was born first, Ronnie Radke or Dave Brockie?",
+    "answer": "Dave Brockie",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is there an association between Muenke Syndrome and FGFR3 gene mutation?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Dan Hurley is the brother of which head coach of Arizona State's men's basketball team?",
+    "answer": "Robert Matthew Hurley",
+    "source": "hotpot"
+  },
+  {
+    "question": "Chemistry and physics are fields in what type of science?",
+    "answer": "physical",
+    "source": "sciq"
+  },
+  {
+    "question": "Many species use their body shape and coloration to avoid what?",
+    "answer": "detection by predators",
+    "source": "sciq"
+  },
+  {
+    "question": "Sperm propel themselves through secretions in the uterus and enter what tube?",
+    "answer": "fallopian",
+    "source": "sciq"
+  },
+  {
+    "question": "What type of rock makes up the formation where Douglas Crabbe drove into a bar?",
+    "answer": "sandstone",
+    "source": "hotpot"
+  },
+  {
+    "question": "What protein is recruited by Crumbs to regulate tracheal development?",
+    "answer": "moesin (Moe)",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which type of glaciers form in high mountains and travel through valleys?",
+    "answer": "alpine glaciers",
+    "source": "sciq"
+  },
+  {
+    "question": "Which molecule is targeted by Teprotumumab?",
+    "answer": "IGF-1R",
+    "source": "bioasq"
+  },
+  {
+    "question": "Do de novo truncating mutations in WASF1 cause cancer?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "What consists of structures that produce eggs and secrete female sex hormones?",
+    "answer": "female reproductive system",
+    "source": "sciq"
+  },
+  {
+    "question": "What natural part of the water cycle can cause damage and death?",
+    "answer": "floods",
+    "source": "sciq"
+  },
+  {
+    "question": "Is there an RNAi drug being developed to treat amyloidosis?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Cytochrome p450 CYP3A is induced by rifampicin  and compounds used to treat what virus?",
+    "answer": "HIV",
+    "source": "bioasq"
+  },
+  {
+    "question": "Thunderbirds was a film featuring the exploits of what part of the Oklahoma Army National Guard?",
+    "answer": "45th Infantry Division",
+    "source": "hotpot"
+  },
+  {
+    "question": "ZF2001 is used for which disease?",
+    "answer": "COVID-19",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is deucravacitinib effective for psoriasis?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the aim of the MitoCeption protocol?",
+    "answer": "Mitochondrial transfer",
+    "source": "bioasq"
+  },
+  {
+    "question": "What date was the person born that Samuel Flores Borrego was the right hand man of? ",
+    "answer": "1 August 1971",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who lived longer, Leonid Khachiyan or Nikolai Lobachevsky?",
+    "answer": "Nikolai Ivanovich Lobachevsky",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which Kevin Costner movie included an actor who also starred in \"Little Big League\"?",
+    "answer": "\"Field of Dreams\"",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are both Barry Unsworth and P. G. Wodehouse from the same country?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "What subsidiary of the largest airline of the Republic of China (Taiwan) has a main hub at Taichung Airport?",
+    "answer": "Mandarin Airlines",
+    "source": "hotpot"
+  },
+  {
+    "question": "What Japanese Auto Manufacturer headquarted in Minato, Tokyo, Japan did Nissan aquire controlling interest in?",
+    "answer": "Mitsubishi",
+    "source": "hotpot"
+  },
+  {
+    "question": "Where does waste enter the large intestine from?",
+    "answer": "the small intestine",
+    "source": "sciq"
+  },
+  {
+    "question": "What  occur when elements switch places in compounds?",
+    "answer": "replacement reactions",
+    "source": "sciq"
+  },
+  {
+    "question": "Is sonidegib effective for basal cell carcinoma?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Where was the university at which  Barrie Ciliberti was a professor located? ",
+    "answer": "Prince George's County, Maryland",
+    "source": "hotpot"
+  },
+  {
+    "question": "Does Rad9 interact with Aft1 in S.cerevisiae?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Electrons are always added to which energy level first?",
+    "answer": "the lowest",
+    "source": "sciq"
+  },
+  {
+    "question": "Burning forests, growing rice and raising livestock all cause a release of what into the atmosphere?",
+    "answer": "greenhouse gases",
+    "source": "sciq"
+  },
+  {
+    "question": "What does the kyoto protocol focus on controlling?",
+    "answer": "greenhouse gas emissions",
+    "source": "sciq"
+  },
+  {
+    "question": "Which protein family is epiregulin a member of?",
+    "answer": "epidermal growth factor family",
+    "source": "bioasq"
+  },
+  {
+    "question": "What do you call the ability to sense sound energy and perceive sound?",
+    "answer": "hearing",
+    "source": "sciq"
+  },
+  {
+    "question": "In between  Polytechnic University of the Philippines and California Polytechnic State University which was founded as a vocational high school?",
+    "answer": "California Polytechnic State University",
+    "source": "hotpot"
+  },
+  {
+    "question": "Egremont Castle is located in what market town, civil parish, and two electoral wards in the Borough of Copeland in Cumbria, England?",
+    "answer": "Egremont",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is there a link between BCL11B haploinsufficiency and syndromic neurodevelopmental delay?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is a thin layer of gas that surrounds earth called?",
+    "answer": "the atmosphere",
+    "source": "sciq"
+  },
+  {
+    "question": "Which member of the human mycobiota is associated to atherosclerosis?",
+    "answer": "Mucor racemosus",
+    "source": "bioasq"
+  },
+  {
+    "question": "Are Wilco Melissant and Todd Field both involved in the film industry (e.g. director, filmmaker, actor)?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which hormone receptor function is altered in patients with Donohue syndrome?",
+    "answer": "insulin receptor",
+    "source": "bioasq"
+  },
+  {
+    "question": "Cancer is caused by mutations, which can be caused by pathogens, chemicals, or what else?",
+    "answer": "radiation",
+    "source": "sciq"
+  },
+  {
+    "question": "Which of the teams that Sun-woo Kim played on never won a division title?",
+    "answer": "Colorado Rockies",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which database associates human noncoding SNPs with their three-dimensional interacting genes?",
+    "answer": "3DSNP",
+    "source": "bioasq"
+  },
+  {
+    "question": "What character did G.D. Spradlin's collaborator Marlon Brando portray in \"On the Waterfront\"?",
+    "answer": "Terry Malloy",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which city is at coastal county-level, Wenling or Ruili?",
+    "answer": "Wenling",
+    "source": "hotpot"
+  },
+  {
+    "question": "Where does the small intestine begin?",
+    "answer": "stomach",
+    "source": "sciq"
+  },
+  {
+    "question": "Is NfL (neurofilament light chain) a biomarker of neurodegeneration?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "On what chromosome is the gene for \"SILVER\" coat color found for the domestic cat?",
+    "answer": "D2",
+    "source": "bioasq"
+  },
+  {
+    "question": "The owner of radio station KWPW has the same name as an American character actor. What is it?",
+    "answer": "Bill McCutcheon",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which of Damon Stoudamire's cousins once played college basketball for the University of Kentucky?",
+    "answer": "Terrence Jones",
+    "source": "hotpot"
+  },
+  {
+    "question": "When light strikes rhodopsin, the g-protein transducin is activated, which in turn activates what?",
+    "answer": "phosphodiesterase",
+    "source": "sciq"
+  },
+  {
+    "question": "Which disease is treated with Nusinersen?",
+    "answer": "Spinal Muscular Atrophy",
+    "source": "bioasq"
+  },
+  {
+    "question": "Is fingolimod a drug or a pro-drug?",
+    "answer": "prodrug",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which algorithm has been developed for finding conserved non-coding elements (CNEs)?",
+    "answer": "CNEFinder",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is blepharospasm?",
+    "answer": "involuntary blinking",
+    "source": "bioasq"
+  },
+  {
+    "question": "Can salivary cortisol be used to evaluate pain in neonates?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Where is the seminar Jeanne Marie Beaumont directed in 2007-2010 located?",
+    "answer": "Franconia, New Hampshire",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is Satb1 a transcription factor?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which has a higher population, Qinzhou or Jingjiang? ",
+    "answer": "Jingjiang",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is Stat4 a transcription factor?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "What is the target of galcanezumab?",
+    "answer": "calcitonin gene-related peptide",
+    "source": "bioasq"
+  },
+  {
+    "question": "Jimmy D'Arcy played in Northern Ireland for the team based in what county?",
+    "answer": "Antrim",
+    "source": "hotpot"
+  },
+  {
+    "question": "Where in the cell do we find the protein Cep135?",
+    "answer": "centrosome",
+    "source": "bioasq"
+  },
+  {
+    "question": "Electrons exist only where the wave is what?",
+    "answer": "stable",
+    "source": "sciq"
+  },
+  {
+    "question": "What theory says stresses build on both sides of a fault?",
+    "answer": "elastic rebound theory",
+    "source": "sciq"
+  },
+  {
+    "question": "Plants and algae maintain the atmosphere. during photosynthesis, they add oxygen and remove what?",
+    "answer": "carbon dioxide",
+    "source": "sciq"
+  },
+  {
+    "question": "What type of electrons do all group 14 elements have four of?",
+    "answer": "valence",
+    "source": "sciq"
+  },
+  {
+    "question": "Is acupotomy used to treat muscle stiffness?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "What event in 1920 was established by the director of the play \"The Miracle?\"",
+    "answer": "Salzburg Festival",
+    "source": "hotpot"
+  },
+  {
+    "question": "Who was hung for assisting the attempted surrender of a defector from the American Continental Army to the British Army?",
+    "answer": "John André",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are Benjamin Britten and Béla Bartók from the same country?",
+    "answer": "no",
+    "source": "hotpot"
+  },
+  {
+    "question": "What three other National forests are administered by the same people who administer the park in which the Art Loeb trail runs through?",
+    "answer": "Croatan, Nantahala, and Uwharrie",
+    "source": "hotpot"
+  },
+  {
+    "question": "If a substance has a ph value greater than 7, what does it indicate?",
+    "answer": "base",
+    "source": "sciq"
+  },
+  {
+    "question": "Like the energy content in food, the energy expenditures of exercise are also reported in what units?",
+    "answer": "kilocalories",
+    "source": "sciq"
+  },
+  {
+    "question": "Which auto club has sanctioned races run in California as well as Indianapolis?",
+    "answer": "United States Auto Club",
+    "source": "hotpot"
+  },
+  {
+    "question": "What is a continuous flow of electric charges called?",
+    "answer": "electric current",
+    "source": "sciq"
+  },
+  {
+    "question": "When energy is captured or transformed, it inevitably degrades and becomes what less useful form of energy?",
+    "answer": "heat",
+    "source": "sciq"
+  },
+  {
+    "question": "What are the most successful phylum of plants?",
+    "answer": "angiosperms",
+    "source": "sciq"
+  },
+  {
+    "question": "Helicopters store large amounts of rotational energy of what type in their blades?",
+    "answer": "kinetic",
+    "source": "sciq"
+  },
+  {
+    "question": "L9LS was developed for which disease?",
+    "answer": "malaria",
+    "source": "bioasq"
+  },
+  {
+    "question": "This One's for the Children had lead vocals by the singer and songwriter of what nationality?",
+    "answer": "American",
+    "source": "hotpot"
+  },
+  {
+    "question": "Multiple award-winning actor Gary Sinise appeared in The Stand in 1994 - a miniseries based on a novel and screenplay by which noted author?",
+    "answer": "Stephen King",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which tool is used to visualise the junction sites of chloroplast genomes?",
+    "answer": "IRscope",
+    "source": "bioasq"
+  },
+  {
+    "question": "Which drug is the first oral ghrelin receptor inverse agonist to be profiled in healthy subjects?",
+    "answer": "PF-05190457",
+    "source": "bioasq"
+  },
+  {
+    "question": "Who achieved more academically, Andrea Martin or Mark Hoplamazian? ",
+    "answer": "Mark S. Hoplamazian",
+    "source": "hotpot"
+  },
+  {
+    "question": "Stockely Webster has paintings hanging in what home (that serves as the residence for the Mayor of New York)?",
+    "answer": "Gracie Mansion",
+    "source": "hotpot"
+  },
+  {
+    "question": "What part is written first when naming an ionic compound?",
+    "answer": "cation",
+    "source": "sciq"
+  },
+  {
+    "question": "What occurs when the amount of solute dissolved exceeds the solubility of the solute?",
+    "answer": "saturation",
+    "source": "sciq"
+  },
+  {
+    "question": "Which package in Bioconductor has been developed with the aim to analyze differential DNA loops from sequencing data?",
+    "answer": "Diffloop",
+    "source": "bioasq"
+  },
+  {
+    "question": "The ability to what is affected by the velocity, or speed, of the water?",
+    "answer": "erode",
+    "source": "sciq"
+  },
+  {
+    "question": "Can METTL3 methylate long noncoding RNAs?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "Do bacteria release extracellular vesicles?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "The creek of which Paradise Creek is a tributary is a tributary of what river?",
+    "answer": "Delaware River",
+    "source": "hotpot"
+  },
+  {
+    "question": "Is Lysyl oxidase crosslinking collagen?",
+    "answer": "yes",
+    "source": "bioasq"
+  },
+  {
+    "question": "The player who defeated Johnny Majors for the Heisman Trophy in 1956 was born in what year?",
+    "answer": "1935",
+    "source": "hotpot"
+  },
+  {
+    "question": "What type of arts that have existed since ancient times did the Stieber Twins specialize in?",
+    "answer": "Graffiti",
+    "source": "hotpot"
+  },
+  {
+    "question": "The galápagos islands are a group of 16 volcanic islands 600 miles off the west coast of what continent?",
+    "answer": "south america",
+    "source": "sciq"
+  },
+  {
+    "question": "What type of enzyme is peroxiredoxin 2 (PRDX2)?",
+    "answer": "antioxidant",
+    "source": "bioasq"
+  },
+  {
+    "question": "It is the variety of what that gives rise to the incredible variation of protein structure and function?",
+    "answer": "amino acid side chains",
+    "source": "sciq"
+  },
+  {
+    "question": "What is making measurements that are close to the true value known as?",
+    "answer": "accuracy",
+    "source": "sciq"
+  },
+  {
+    "question": "Air is an example of what state of matter?",
+    "answer": "gas",
+    "source": "sciq"
+  },
+  {
+    "question": "What regular performer at the R-26 club in Paris was known for her banana-themed costume?",
+    "answer": "Josephine Baker",
+    "source": "hotpot"
+  },
+  {
+    "question": "Are genomic regulatory blocks (GRBs) any different than TADs?",
+    "answer": "no",
+    "source": "bioasq"
+  },
+  {
+    "question": "Are University of Virginia and Massachusetts Institute of Technology in the same country?",
+    "answer": "yes",
+    "source": "hotpot"
+  },
+  {
+    "question": "Which American anthology horror series created and produced by Ryan Murphy and Brad Falchuk did  Denis O'Hare filmography performance in the first season of ",
+    "answer": "American Horror Story",
+    "source": "hotpot"
+  },
+  {
+    "question": "What type of bombs put a much larger fraction of their output into thermal energy than do conventional bombs?",
+    "answer": "nuclear",
+    "source": "sciq"
+  },
+  {
+    "question": "Football at the 2006 Asian Games with Wisoon Wichaya as its coach was played how many days prior to the opening ceromony in Doha, Qatar in 2006? ",
+    "answer": "14",
+    "source": "hotpot"
+  },
+  {
+    "question": "Edwyn Collins and Ian Gillan both have which profession in common?",
+    "answer": "singer",
+    "source": "hotpot"
+  },
+  {
+    "question": "What are the two layers of the skin?",
+    "answer": "epidermis and dermis",
+    "source": "sciq"
+  },
+  {
+    "question": "How do we describe chemical reactions?",
+    "answer": "chemical equations",
+    "source": "sciq"
+  },
+  {
+    "question": "Which Walt Disney film was produced first, The Apple Dumpling Gang or Something Wicked This Way Comes?",
+    "answer": "The Apple Dumpling Gang",
+    "source": "hotpot"
+  }
+]
