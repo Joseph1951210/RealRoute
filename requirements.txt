@@ -4,4 +4,5 @@ sentence-transformers
 scikit-learn
 tiktoken
 networkx
-spacy 
+spacy
+streamlit

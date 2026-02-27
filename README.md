@@ -1,72 +1,62 @@
 # Multi-Source RAG Demo (RealRoute)
 
-This repository is an experimental extension of the DeepSieve-style pipeline, with a current focus on:
+This repository provides an installable demo package for a DeepSieve-derived multi-source RAG system with:
 
 - Multi-source retrieval
 - Evidence-level selection
-- Adaptive Cap (routing-conditioned per-source quotas)
-- A Streamlit demo UI for system workflow, evidence, and trace visualization
+- Adaptive Cap (`preferred_source` + fixed quotas)
+- Streamlit UI for workflow, evidence, and trace inspection
 
+## Installable Package Link
 
-## 1. System Workflow (Current Version)
+- Source repository: `https://github.com/Joseph1951210/RealRoute`
+- Installable package (ACL demo artifact): `[[TODO: add GitHub Release asset URL]]`
 
-The current system workflow (as implemented in code) is:
+## Environment Requirements
 
-1. Query input (from preset datasets or uploaded custom queries)
-2. Optional `decompose`: split a complex question into subqueries
-3. Execute subqueries in order with variable binding (placeholder substitution)
-4. Retrieval stage:
-   - Hard Routing: select one source first, then retrieve
-   - Multi-Source / Adaptive Cap: retrieve from all sources first, then select evidence
-5. Evidence selection stage:
-   - `selector=score/norm_score/routing_weighted/rrf/llm`
-   - Optional fixed cap or Adaptive Cap
-6. Subquery answer generation (with optional reflection retries)
-7. Final fusion: combine subquery answers into the final answer
-8. Save trace and metrics to `outputs/`
+- Python 3.10+ (recommended: Python 3.10 or 3.11)
+- macOS/Linux shell
+- OpenAI-compatible API key (`OPENAI_API_KEY`)
 
-## 2. Main Features (Current Repository)
-
-- Original 2-source local/global pipeline (DeepSieve-style)
-- 3-source / 4-source multi-source retrieval
-- N-source hard routing (`--hard_routing_multi`)
-- Adaptive Cap (`--preferred_cap`, `--other_cap`)
-- JSONL trace outputs for case analysis
-- Streamlit demo UI (supports Custom Queries / Custom Source)
-
-## 3. Environment Setup
-
-Use `python3` (some environments do not provide the `pip` alias, only `pip3`).
-
-### Install dependencies
+## Quick Start (Demo UI)
 
 ```bash
 python3 -m pip install -r requirements.txt
-python3 -m pip install streamlit
-```
-
-### Configure API key
-
-```bash
 export OPENAI_API_KEY=your_api_key
+python3 -m streamlit run demo/app.py
 ```
 
-Optional:
+Open the local Streamlit URL shown in the terminal (typically `http://localhost:8501`).
 
-```bash
-export OPENAI_MODEL=gpt-4o
-export OPENAI_API_BASE=https://api.openai.com/v1
-```
+## What the Demo Shows
 
-## 4. CLI Usage (Core Experiments)
+1. Configure dataset preset and mode (`Hard Routing` or `Adaptive Cap`)
+2. Run the pipeline with configurable retrieval/selection parameters
+3. Inspect run-level summary (output directory, config snapshot, overall metrics)
+4. Inspect query-level traces (subqueries, routing, evidence, final answer, metrics)
+5. Compare baseline vs Adaptive Cap in the same UI
 
-Main entrypoint:
+## System Workflow (Implemented Behavior)
 
-- `runner/main_rag_only.py`
+1. Query input (preset dataset or uploaded custom queries)
+2. Optional decomposition into subqueries (`decompose`)
+3. Ordered subquery execution with variable binding
+4. Retrieval:
+   - Hard Routing: route to one source then retrieve
+   - Adaptive Cap mode: retrieve from all sources, then select evidence
+5. Evidence selection using `selector` with optional Adaptive Cap
+6. Subquery answer generation (optional reflection retries)
+7. Final answer fusion
+8. Save traces and run summaries under `outputs/`
 
-### 4.1 Hard Routing (baseline)
+## Main Entrypoints
 
-2-source (local/global) example:
+- CLI pipeline: `runner/main_rag_only.py`
+- Web UI: `demo/app.py`
+
+## CLI Examples
+
+### Hard Routing (2-source baseline)
 
 ```bash
 python3 runner/main_rag_only.py \
@@ -78,7 +68,7 @@ python3 runner/main_rag_only.py \
   --use_reflection
 ```
 
-3/4-source N-way hard routing example:
+### Hard Routing (N-source: 3/4-source datasets)
 
 ```bash
 python3 runner/main_rag_only.py \
@@ -91,9 +81,7 @@ python3 runner/main_rag_only.py \
   --hard_routing_multi
 ```
 
-### 4.2 Adaptive Cap (ours)
-
-Example (`top_k_per_source=8, keep_k=8, preferred_cap=5, other_cap=2`):
+### Adaptive Cap (example configuration)
 
 ```bash
 python3 runner/main_rag_only.py \
@@ -111,48 +99,31 @@ python3 runner/main_rag_only.py \
   --selector score
 ```
 
-Parameter meanings (current implementation):
+## Parameter Notes
 
-- `top_k_per_source`: number of candidates retrieved from each source first
-- `keep_k`: number of final evidences kept for generation
-- `preferred_cap / other_cap`: Adaptive Cap quotas
-- `selector`: evidence selection strategy (default: `score`)
+- `top_k_per_source`: candidates retrieved per source before selection
+- `keep_k`: final evidence budget for answer generation
+- `preferred_cap` / `other_cap`: source quota in Adaptive Cap mode
+- `selector`: evidence selector (`score`, `norm_score`, `routing_weighted`, `rrf`, `llm`)
 
-Important note:
-- Current Adaptive Cap is `preferred_source + fixed quotas`, not a confidence-calibrated quota policy.
+Important: current Adaptive Cap is not confidence-calibrated. It uses routing-preferred source + fixed quotas.
 
-## 5. Streamlit Web UI (Demo View)
+## Web UI Features
 
-Entrypoint:
+- Dataset presets: 2-source / 3-source / 4-source
+- Mode toggle: Hard Routing vs Adaptive Cap
+- Pipeline toggles: `decompose`, `use_reflection`, `sample_size`, optional `query_index`
+- Compare mode: run baseline and Adaptive Cap on the same query set
+- Trace view tabs: primary trace, side-by-side compare, comparison trace
+- Trace download: JSONL and JSON
 
-- `demo/app.py`
+## Custom Queries Upload
 
-Run:
+Custom queries override preset query loading but still use preset corpora.
 
-```bash
-python3 -m streamlit run demo/app.py
-```
+Supported formats:
 
-The UI supports:
-
-- Preset datasets (2-source / 3-source / 4-source)
-- Mode selection:
-  - Hard Routing
-  - Adaptive Cap
-- Parameter controls (`top_k_per_source`, `keep_k`, `selector`, `preferred_cap`, `other_cap`)
-- `decompose` / `use_reflection` toggles
-- Compare with baseline (run the same queries twice)
-- Trace rendering from `query_i_results.jsonl`
-- Trace download (JSONL / JSON)
-
-## 6. Custom Queries (Upload)
-
-The Web UI supports uploading custom queries in JSON or CSV:
-
-- Uploaded queries override the preset query loader
-- The preset sources/corpora are still used for retrieval
-
-### JSON format
+- JSON:
 
 ```json
 [
@@ -161,30 +132,20 @@ The Web UI supports uploading custom queries in JSON or CSV:
 ]
 ```
 
-### CSV format
+- CSV:
+  - required column: `query`
+  - optional column: `ground_truth`
 
-Required column:
+If `ground_truth` is provided, EM/F1 is shown; otherwise answer/trace only.
 
-- `query`
+## Custom Source Upload (Optional)
 
-Optional column:
+The UI can add one uploaded source corpus to the selected preset sources.
 
-- `ground_truth`
+- Required fields: `source_name`, `source_profile`
+- File format: JSON or CSV
 
-Behavior:
-
-- If `ground_truth` is provided, the UI shows EM/F1.
-- If `ground_truth` is missing, the UI shows answer + evidence trace only.
-
-## 7. Custom Source (Upload)
-
-The Web UI can add one extra source on top of the selected preset sources (for demoing extension to a new source):
-
-- `source_name`
-- `source_profile` (used by the router)
-- Upload corpus (JSON/CSV)
-
-### Custom Source JSON format (recommended)
+JSON examples:
 
 ```json
 [
@@ -193,7 +154,7 @@ The Web UI can add one extra source on top of the selected preset sources (for d
 ]
 ```
 
-Also supported:
+or
 
 ```json
 [
@@ -202,66 +163,47 @@ Also supported:
 ]
 ```
 
-### Custom Source CSV format
+CSV:
 
-Required column:
+- required: `text`
+- optional: `title`
 
-- `text`
+## Output Artifacts
 
-Optional column:
+Each run writes to a directory in `outputs/` (directory name encodes key settings).
 
-- `title`
+Common files:
 
-Notes:
+- `query_{i}_results.jsonl`
+- `query_{i}_fusion_prompt.txt`
+- `overall_results.json`
+- `overall_results.txt`
+- `demo_run_meta.json` (UI run metadata)
 
-- The uploaded source is added to the preset sources (it does not replace them).
-- Example: 3-source preset + custom source => effective 4-source run.
-
-## 8. Outputs and Trace
-
-Each run creates a directory under `outputs/`. Directory names encode key settings (mode, k, cap, selector, etc.).
-
-Common outputs:
-
-- `query_{i}_results.jsonl`: per-query trace
-- `query_{i}_fusion_prompt.txt`: fusion-stage prompt
-- `overall_results.json`: aggregated metrics
-- `overall_results.txt`: readable summary
-
-### Common JSONL record types
+Typical JSONL record types:
 
 - `query_info`
 - `final_answer`
 - `evaluation_metrics`
 - `performance_metrics`
-- `execution_result` (one per subquery)
+- `execution_result`
 - `fused_answer_step`
 
-## 9. Batch Experiment Scripts
+## Common Runtime Issues
 
-Located in `scripts/`:
+- `OPENAI_API_KEY is required`:
+  - Ensure `export OPENAI_API_KEY=...` is executed in the same shell session before launching Streamlit.
+- `pip: command not found`:
+  - Use `python3 -m pip ...` instead of `pip ...`.
 
-- `run_gpt4o_adaptive_cap.sh`
-- `run_gpt4o_k8_cap3.sh`
-- `run_all_gpt4o.sh`
+## Release Checklist (Installable Package for ACL Demo)
 
-Check script parameters before running.
+1. Push the latest code to GitHub.
+2. Create a version tag (e.g., `v1.0-acl-demo`).
+3. Create a GitHub Release from that tag.
+4. Upload a downloadable source archive (`.zip` or `.tar.gz`) as release asset.
+5. Replace `[[TODO: add GitHub Release asset URL]]` above with the release asset link.
 
-## 10. Relation to the Original DeepSieve Baseline
+## Relation to the Original DeepSieve Baseline
 
-This repository keeps DeepSieve-style components:
-
-- decomposition
-- routing
-- reflection
-- final fusion
-
-and extends them with:
-
-- multi-source retrieval
-- evidence selector
-- Adaptive Cap
-- demo UI / trace visualization
-
-For the original DeepSieve work, please refer to the original repository and paper.
-
+This repository keeps DeepSieve-style components (decomposition, routing, reflection, fusion) and extends them with multi-source retrieval, evidence selection, Adaptive Cap, and a trace-oriented demo UI.
