@@ -10,7 +10,7 @@ This repository provides an installable demo package for a DeepSieve-derived mul
 ## Installable Package Link
 
 - Source repository: `https://github.com/Joseph1951210/RealRoute`
-- Installable package (ACL demo artifact): `https://github.com/Joseph1951210/RealRoute/archive/refs/tags/v1.0.1-acl-demo.zip`
+- Installable package (  demo artifact): `https://github.com/Joseph1951210/RealRoute/archive/refs/tags/v1.0.1- -demo.zip`
 
 ## Environment Requirements
 
@@ -28,9 +28,9 @@ python3 -m streamlit run demo/app.py
 
 Open the local Streamlit URL shown in the terminal (typically `http://localhost:8501`).
 
-## Dataset Availability in Release `v1.0-acl-demo`
+## Dataset Availability in Release `v1.0- -demo`
 
-The `v1.0-acl-demo` package includes tracked datasets required for the original 2-source preset (e.g., `hotpot_qa` local/global files).
+The `v1.0- -demo` package includes tracked datasets required for the original 2-source preset (e.g., `hotpot_qa` local/global files).
 
 For 3-source / 4-source presets (`multi_source`, `mixed_4source`), make sure the corresponding files exist under `data/rag/` before running those presets:
 
@@ -208,10 +208,10 @@ Typical JSONL record types:
 - `pip: command not found`:
   - Use `python3 -m pip ...` instead of `pip ...`.
 
-## Release Checklist (Installable Package for ACL Demo)
+## Release Checklist (Installable Package for   Demo)
 
 1. Push the latest code to GitHub.
-2. Create a version tag (e.g., `v1.0-acl-demo`).
+2. Create a version tag (e.g., `v1.0- -demo`).
 3. Create a GitHub Release from that tag.
 4. Upload a downloadable source archive (`.zip` or `.tar.gz`) as release asset.
 5. Replace `[[TODO: add GitHub Release asset URL]]` above with the release asset link.
